@@ -8,35 +8,66 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Material Design 3.0 inspired color system */
+    --background: 248 250 252 / 1; /* slate-50 */
+    --foreground: 15 23 42 / 1; /* slate-800 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 255 255 255 / 1;
+    --card-foreground: 15 23 42 / 1;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 255 255 255 / 1;
+    --popover-foreground: 15 23 42 / 1;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Deep purple primary - brain/knowledge theme */
+    --primary: 262 83% 58%; /* purple-500 */
+    --primary-foreground: 255 255 255 / 1;
+    --primary-50: 250 245 255 / 1;
+    --primary-100: 243 232 255 / 1;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 236 253 245 / 1; /* emerald-50 */
+    --secondary-foreground: 6 78 59 / 1; /* emerald-700 */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 241 245 249 / 1; /* slate-100 */
+    --muted-foreground: 100 116 139 / 1; /* slate-500 */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 191 219 254 / 1; /* blue-200 */
+    --accent-foreground: 30 58 138 / 1; /* blue-900 */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 239 68 68 / 1; /* red-500 */
+    --destructive-foreground: 255 255 255 / 1;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 226 232 240 / 1; /* slate-200 */
+    --input: 241 245 249 / 1; /* slate-100 */
+    --ring: 262 83% 58%; /* purple-500 */
 
-    --radius: 0.5rem;
+    /* Material Design elevation shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+    /* Gradients for modern feel */
+    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(236 72% 79%));
+    --gradient-secondary: linear-gradient(135deg, hsl(191 219 254), hsl(147 197 253));
+    --gradient-surface: linear-gradient(180deg, hsl(255 255 255), hsl(248 250 252));
+
+    /* Material Design radius system */
+    --radius-xs: 0.125rem; /* 2px */
+    --radius-sm: 0.25rem;  /* 4px */
+    --radius: 0.5rem;      /* 8px - primary */
+    --radius-md: 0.75rem;  /* 12px */
+    --radius-lg: 1rem;     /* 16px */
+    --radius-xl: 1.5rem;   /* 24px */
+
+    /* Typography scale */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +87,40 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 15 23 42 / 1; /* slate-800 */
+    --foreground: 248 250 252 / 1; /* slate-50 */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 30 41 59 / 1; /* slate-700 */
+    --card-foreground: 248 250 252 / 1;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 30 41 59 / 1;
+    --popover-foreground: 248 250 252 / 1;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 196 181 253 / 1; /* violet-300 */
+    --primary-foreground: 46 16 101 / 1; /* violet-900 */
+    --primary-50: 46 16 101 / 1;
+    --primary-100: 76 29 149 / 1;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 6 78 59 / 1; /* emerald-700 */
+    --secondary-foreground: 236 253 245 / 1;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 51 65 85 / 1; /* slate-600 */
+    --muted-foreground: 148 163 184 / 1; /* slate-400 */
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 30 58 138 / 1; /* blue-800 */
+    --accent-foreground: 191 219 254 / 1;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 220 38 38 / 1; /* red-600 */
+    --destructive-foreground: 254 242 242 / 1;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 51 65 85 / 1; /* slate-600 */
+    --input: 30 41 59 / 1; /* slate-700 */
+    --ring: 196 181 253 / 1; /* violet-300 */
+
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(196 181 253), hsl(167 139 250));
+    --gradient-secondary: linear-gradient(135deg, hsl(6 78 59), hsl(34 197 94));
+    --gradient-surface: linear-gradient(180deg, hsl(30 41 59), hsl(15 23 42));
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +138,122 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Material Design typography styles */
+  .text-display-large {
+    @apply text-6xl font-normal tracking-tight;
+  }
+  
+  .text-display-medium {
+    @apply text-5xl font-normal tracking-tight;
+  }
+  
+  .text-display-small {
+    @apply text-4xl font-normal tracking-tight;
+  }
+  
+  .text-headline-large {
+    @apply text-3xl font-normal tracking-tight;
+  }
+  
+  .text-headline-medium {
+    @apply text-2xl font-normal tracking-tight;
+  }
+  
+  .text-headline-small {
+    @apply text-xl font-normal tracking-tight;
+  }
+  
+  .text-title-large {
+    @apply text-lg font-medium tracking-tight;
+  }
+  
+  .text-title-medium {
+    @apply text-base font-medium tracking-wide;
+  }
+  
+  .text-title-small {
+    @apply text-sm font-medium tracking-wide;
+  }
+  
+  .text-body-large {
+    @apply text-base font-normal leading-relaxed;
+  }
+  
+  .text-body-medium {
+    @apply text-sm font-normal leading-relaxed;
+  }
+  
+  .text-body-small {
+    @apply text-xs font-normal leading-relaxed;
+  }
+  
+  .text-label-large {
+    @apply text-sm font-medium tracking-wide;
+  }
+  
+  .text-label-medium {
+    @apply text-xs font-medium tracking-wider;
+  }
+  
+  .text-label-small {
+    @apply text-xs font-medium tracking-widest;
+  }
+
+  /* Material Design elevation utilities */
+  .elevation-1 {
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .elevation-2 {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .elevation-3 {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .elevation-4 {
+    box-shadow: var(--shadow-xl);
+  }
+
+  /* Smooth animations */
+  .transition-material {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Custom scrollbar */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+
+  /* Floating Action Button */
+  .fab {
+    @apply fixed bottom-6 right-6 w-14 h-14 rounded-full shadow-lg transition-all duration-200 ease-out;
+    @apply hover:shadow-xl hover:scale-105 active:scale-95;
+  }
+
+  /* Material Design surface styles */
+  .surface {
+    @apply bg-card text-card-foreground rounded-lg;
+  }
+  
+  .surface-variant {
+    @apply bg-secondary text-secondary-foreground rounded-lg;
   }
 }
