@@ -18,16 +18,16 @@ export function TopBar() {
         {/* Left section */}
         <div className="flex items-center gap-4">
           <div className="lg:hidden">
-            <Button variant="ghost" size="icon">
+            <Button variant="ghost" size="icon" className="center-perfect">
               <Menu className="w-5 h-5" />
             </Button>
           </div>
           
           <div className="hidden md:block">
-            <h2 className="text-headline-small text-foreground">
+            <h2 className="text-headline-small text-foreground text-glow">
               Good morning, Alex 👋
             </h2>
-            <p className="text-body-small text-muted-foreground">
+            <p className="text-body-small text-muted-foreground text-balance">
               Ready to expand your knowledge today?
             </p>
           </div>
@@ -36,18 +36,18 @@ export function TopBar() {
         {/* Right section */}
         <div className="flex items-center gap-3">
           {/* Theme toggle */}
-          <Button variant="ghost" size="icon" className="hover:bg-primary/10">
+          <Button variant="ghost" size="icon" className="hover:bg-primary/10 center-perfect">
             <Sun className="w-5 h-5" />
           </Button>
 
           {/* Notifications */}
-          <div className="relative">
-            <Button variant="ghost" size="icon" className="hover:bg-primary/10">
+          <div className="relative center-perfect">
+            <Button variant="ghost" size="icon" className="hover:bg-primary/10 center-perfect">
               <Bell className="w-5 h-5" />
             </Button>
             <Badge 
               variant="destructive" 
-              className="absolute -top-1 -right-1 w-5 h-5 rounded-full p-0 flex items-center justify-center text-xs"
+              className="absolute -top-1 -right-1 w-5 h-5 rounded-full p-0 center-perfect text-xs shadow-lg"
             >
               3
             </Badge>
@@ -56,7 +56,7 @@ export function TopBar() {
           {/* User menu */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="relative h-10 w-10 rounded-full">
+              <Button variant="ghost" className="relative h-10 w-10 rounded-full center-perfect">
                 <Avatar className="h-10 w-10">
                   <AvatarImage src="/placeholder-avatar.jpg" alt="@user" />
                   <AvatarFallback className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">

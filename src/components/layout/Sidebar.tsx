@@ -34,7 +34,7 @@ export function Sidebar() {
   return (
     <div className={cn(
       "bg-card border-r border-border transition-all duration-300 ease-in-out",
-      "flex flex-col elevation-2",
+      "flex flex-col elevation-2 min-h-screen",
       isCollapsed ? "w-16" : "w-72"
     )}>
       {/* Header */}
@@ -42,11 +42,11 @@ export function Sidebar() {
         <div className="flex items-center justify-between">
           {!isCollapsed && (
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary/80 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary/80 rounded-lg center-perfect">
                 <Brain className="w-5 h-5 text-primary-foreground" />
               </div>
-              <div>
-                <h1 className="text-title-medium font-semibold">Second Brain</h1>
+              <div className="flex flex-col justify-center">
+                <h1 className="text-title-medium font-semibold text-gradient">Second Brain</h1>
                 <p className="text-body-small text-muted-foreground">Neural Knowledge Hub</p>
               </div>
             </div>
@@ -55,7 +55,7 @@ export function Sidebar() {
             variant="ghost" 
             size="icon"
             onClick={() => setIsCollapsed(!isCollapsed)}
-            className="hover:bg-primary/10"
+            className="hover:bg-primary/10 center-perfect"
           >
             {isCollapsed ? (
               <ChevronRight className="w-4 h-4" />

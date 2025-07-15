@@ -56,21 +56,21 @@ export function NeuralNetworkView() {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-display-small font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="text-center md:text-left">
+          <h1 className="text-display-small font-bold text-gradient text-glow mb-2">
             Neural Network
           </h1>
-          <p className="text-body-large text-muted-foreground mt-2">
+          <p className="text-body-large text-muted-foreground text-balance">
             Your interconnected web of knowledge, growing stronger with every connection
           </p>
         </div>
-        <div className="flex items-center gap-2">
-          <Badge variant="secondary" className="gap-2">
+        <div className="flex flex-wrap items-center justify-center md:justify-end gap-2">
+          <Badge variant="secondary" className="gap-2 shadow-md">
             <Zap className="w-4 h-4" />
             432 connections active
           </Badge>
-          <Badge variant="secondary" className="gap-2">
+          <Badge variant="secondary" className="gap-2 shadow-md">
             <TrendingUp className="w-4 h-4" />
             87% growth this week
           </Badge>
@@ -89,37 +89,37 @@ export function NeuralNetworkView() {
           >
             {/* Node header */}
             <div className="flex items-start justify-between mb-4">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 flex-1">
                 <div className={cn(
-                  "w-10 h-10 rounded-lg flex items-center justify-center",
+                  "w-10 h-10 rounded-lg center-perfect flex-shrink-0",
                   "bg-gradient-to-br from-primary/20 to-primary/10 group-hover:from-primary/30 group-hover:to-primary/20 transition-colors"
                 )}>
                   <Brain className="w-5 h-5 text-primary" />
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 flex-1 min-w-0">
                   <div 
                     className={cn(
-                      "w-3 h-3 rounded-full transition-colors",
+                      "w-3 h-3 rounded-full transition-colors flex-shrink-0",
                       node.strength > 0.8 ? "bg-green-500" :
                       node.strength > 0.6 ? "bg-yellow-500" : "bg-red-500"
                     )}
                   />
-                  <span className="text-xs text-muted-foreground">
+                  <span className="text-xs text-muted-foreground truncate">
                     {Math.round(node.strength * 100)}% strength
                   </span>
                 </div>
               </div>
-              <Button variant="ghost" size="icon" className="opacity-0 group-hover:opacity-100 transition-opacity">
+              <Button variant="ghost" size="icon" className="opacity-0 group-hover:opacity-100 transition-opacity center-perfect">
                 <Eye className="w-4 h-4" />
               </Button>
             </div>
 
             {/* Content */}
             <div className="space-y-3">
-              <h3 className="text-title-medium font-semibold line-clamp-2 group-hover:text-primary transition-colors">
+              <h3 className="text-title-medium font-semibold line-clamp-2 group-hover:text-primary transition-colors text-embossed">
                 {node.title}
               </h3>
-              <p className="text-body-small text-muted-foreground line-clamp-3">
+              <p className="text-body-small text-muted-foreground line-clamp-3 text-balance">
                 {node.content}
               </p>
             </div>
@@ -164,14 +164,14 @@ export function NeuralNetworkView() {
       </div>
 
       {/* Network Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <Card className="p-4 surface">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-lg center-perfect">
               <Brain className="w-5 h-5 text-blue-600" />
             </div>
-            <div>
-              <p className="text-title-large font-semibold">247</p>
+            <div className="flex flex-col justify-center min-w-0 flex-1">
+              <p className="text-title-large font-semibold text-embossed">247</p>
               <p className="text-body-small text-muted-foreground">Total Nodes</p>
             </div>
           </div>
@@ -179,11 +179,11 @@ export function NeuralNetworkView() {
 
         <Card className="p-4 surface">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-green-500/20 to-green-600/20 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-green-500/20 to-green-600/20 rounded-lg center-perfect">
               <Link className="w-5 h-5 text-green-600" />
             </div>
-            <div>
-              <p className="text-title-large font-semibold">1,432</p>
+            <div className="flex flex-col justify-center min-w-0 flex-1">
+              <p className="text-title-large font-semibold text-embossed">1,432</p>
               <p className="text-body-small text-muted-foreground">Connections</p>
             </div>
           </div>
@@ -191,11 +191,11 @@ export function NeuralNetworkView() {
 
         <Card className="p-4 surface">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-purple-500/20 to-purple-600/20 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-purple-500/20 to-purple-600/20 rounded-lg center-perfect">
               <Sparkles className="w-5 h-5 text-purple-600" />
             </div>
-            <div>
-              <p className="text-title-large font-semibold">89%</p>
+            <div className="flex flex-col justify-center min-w-0 flex-1">
+              <p className="text-title-large font-semibold text-embossed">89%</p>
               <p className="text-body-small text-muted-foreground">Avg Strength</p>
             </div>
           </div>
@@ -203,11 +203,11 @@ export function NeuralNetworkView() {
 
         <Card className="p-4 surface">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-orange-500/20 to-orange-600/20 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-orange-500/20 to-orange-600/20 rounded-lg center-perfect">
               <TrendingUp className="w-5 h-5 text-orange-600" />
             </div>
-            <div>
-              <p className="text-title-large font-semibold">+23</p>
+            <div className="flex flex-col justify-center min-w-0 flex-1">
+              <p className="text-title-large font-semibold text-embossed">+23</p>
               <p className="text-body-small text-muted-foreground">This Week</p>
             </div>
           </div>

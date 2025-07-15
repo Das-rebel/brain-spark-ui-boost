@@ -142,29 +142,35 @@ All colors MUST be HSL.
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
-  /* Material Design typography styles */
+  /* Material Design typography styles with enhanced shadows */
   .text-display-large {
     @apply text-6xl font-normal tracking-tight;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
   }
   
   .text-display-medium {
     @apply text-5xl font-normal tracking-tight;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
   }
   
   .text-display-small {
     @apply text-4xl font-normal tracking-tight;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
   }
   
   .text-headline-large {
     @apply text-3xl font-normal tracking-tight;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   }
   
   .text-headline-medium {
     @apply text-2xl font-normal tracking-tight;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   }
   
   .text-headline-small {
     @apply text-xl font-normal tracking-tight;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
   }
   
   .text-title-large {
@@ -248,12 +254,62 @@ All colors MUST be HSL.
     @apply hover:shadow-xl hover:scale-105 active:scale-95;
   }
 
-  /* Material Design surface styles */
+  /* Enhanced text effects */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary via-primary/90 to-primary/70 bg-clip-text text-transparent;
+    -webkit-text-stroke: 0.5px rgba(139, 92, 246, 0.2);
+    filter: drop-shadow(0 2px 4px rgba(139, 92, 246, 0.1));
+  }
+  
+  .text-glow {
+    text-shadow: 
+      0 0 10px rgba(139, 92, 246, 0.3),
+      0 0 20px rgba(139, 92, 246, 0.2),
+      0 0 30px rgba(139, 92, 246, 0.1);
+  }
+  
+  .text-embossed {
+    text-shadow: 
+      0 1px 0 rgba(255, 255, 255, 0.4),
+      0 -1px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .text-inset {
+    text-shadow: 
+      inset 0 1px 0 rgba(0, 0, 0, 0.2),
+      0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+
+  /* Surface styles with improved alignment */
   .surface {
     @apply bg-card text-card-foreground rounded-lg;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
   }
   
   .surface-variant {
     @apply bg-secondary text-secondary-foreground rounded-lg;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Perfect center alignment utility */
+  .center-perfect {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Grid alignment fixes */
+  .grid-center {
+    display: grid;
+    place-items: center;
+  }
+
+  /* Text alignment utilities */
+  .text-balance {
+    text-wrap: balance;
   }
 }
