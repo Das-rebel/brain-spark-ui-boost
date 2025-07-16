@@ -35,6 +35,7 @@ export function Sidebar() {
     <div className={cn(
       "bg-card border-r border-border transition-all duration-300 ease-in-out",
       "flex flex-col elevation-2 min-h-screen",
+      "hidden lg:flex", // Hide on mobile, show on large screens
       isCollapsed ? "w-16" : "w-72"
     )}>
       {/* Header */}

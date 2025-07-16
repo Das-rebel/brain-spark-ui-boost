@@ -14,28 +14,29 @@ export function FloatingActionButton() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed bottom-6 right-6 flex flex-col-reverse items-end gap-3 z-50">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 flex flex-col-reverse items-end gap-2 sm:gap-3 z-50">
       {/* Quick action buttons */}
       {isOpen && (
         <div className="flex flex-col gap-2 animate-in slide-in-from-bottom-4">
           {quickActions.map((action, index) => (
             <div
               key={action.label}
-              className="flex items-center gap-3 animate-in slide-in-from-right-2"
-              style={{ animationDelay: `${index * 50}ms` }}
+              className="flex items-center gap-2 sm:gap-3 animate-in slide-in-from-right-2"
+              style={{ animationDelay: `${index * 75}ms`, animationDuration: "300ms" }}
             >
-              <span className="bg-card px-3 py-1 rounded-full text-sm text-foreground shadow-md border border-border">
+              <span className="bg-card px-2 py-1 sm:px-3 rounded-full text-xs sm:text-sm text-foreground shadow-md border border-border hidden xs:block">
                 {action.label}
               </span>
               <Button
                 size="icon"
                 className={cn(
-                  "w-12 h-12 rounded-full shadow-lg hover:shadow-xl transition-all duration-200",
-                  "bg-gradient-to-r hover:scale-105 active:scale-95",
+                  "w-10 h-10 sm:w-12 sm:h-12 rounded-full shadow-lg hover:shadow-xl transition-all duration-200",
+                  "bg-gradient-to-r hover:scale-105 active:scale-95 animate-pulse",
                   action.color
                 )}
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                <action.icon className="w-5 h-5 text-white" />
+                <action.icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
               </Button>
             </div>
           ))}
@@ -47,12 +48,13 @@ export function FloatingActionButton() {
         size="icon"
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          "w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-200",
+          "w-12 h-12 sm:w-14 sm:h-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300",
           "bg-gradient-to-r from-primary to-primary/90 hover:scale-105 active:scale-95",
-          isOpen && "rotate-45"
+          "animate-pulse hover:animate-none",
+          isOpen && "rotate-45 bg-gradient-to-r from-red-500 to-red-600"
         )}
       >
-        <Plus className="w-6 h-6 text-primary-foreground" />
+        <Plus className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground transition-transform duration-300" />
       </Button>
     </div>
   );
